@@ -1,0 +1,60 @@
+body {
+  background-color: #c3d7f7;
+}
+
+@font-face {
+    font-family: lobster;
+    src: url(Lobster-Regular.ttf);
+}
+
+.title {
+  font-family: lobster;
+  text-align: center;
+  font-size: 45px;
+  margin: 15px 0;
+}
+
+.simulation-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.simulation-canvas {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.simulation-controls {
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.simulation-controls__input-label {
+  text-align: center;
+  font-size: 20px;
+}
+
+.simulation-controls__input{
+  -webkit-appearance: none;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: solid;
+  border-color: cornflowerblue;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.footer {
+  margin: 30px 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: lobster;
+}
