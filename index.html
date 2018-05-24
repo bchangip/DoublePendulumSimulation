@@ -12,16 +12,85 @@
   <div class="simulation-area">
     <canvas id="simulation-canvas" width="600" height="600" class="simulation-canvas"></canvas>
     <div class="simulation-controls">
-      <div class="simulation-controls__input-label">Masa 1</div>
-      <input class="simulation-controls__input" type="number" name="mass1">
-      <div class="simulation-controls__input-label">Masa 2</div>
-      <input class="simulation-controls__input" type="number" name="mass2">
-      <div class="simulation-controls__input-label">Largo 1</div>
-      <input class="simulation-controls__input" type="number" name="length1">
-      <div class="simulation-controls__input-label">Largo 2</div>
-      <input class="simulation-controls__input" type="number" name="length2">
-      <div class="simulation-controls__input-label">Gravedad</div>
-      <input class="simulation-controls__input" type="number" name="gravity">
+      <div class="simulation-controls__row-full">
+        <div class="simulation-controls__input-label">Metodo</div>
+        <select class="simulation-controls__select" id="method" onchange="handleInputChanges()" name="method">
+          <option value="Euler">Euler</option>
+          <option value="S_PuntoM">S_PuntoM</option>
+          <option value="S_Ralston">S_Ralston</option>
+          <option value="S_Heun">S_Heun</option>
+          <option value="S_RK4" selected="selected">S_RK4</option>
+        </select>
+      </div>
+
+      <div class="simulation-controls__row-full">
+        <div class="simulation-controls__input-label">Tiempo inicial</div>
+        <input class="simulation-controls__input" type="number" id="t0" onchange="handleInputChanges()" value="0" name="t0">
+      </div>
+      <div class="simulation-controls__row">
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Angulo inicial 1</div>
+          <input class="simulation-controls__input" type="number" id="theta10" onchange="handleInputChanges()" value="45" name="theta10">
+        </div>
+
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Angulo inicial 2</div>
+          <input class="simulation-controls__input" type="number" id="theta20" onchange="handleInputChanges()" value="25" name="theta20">
+        </div>
+      </div>
+
+      <div class="simulation-controls__row">
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Velocidad angular inicial 1</div>
+          <input class="simulation-controls__input" type="number" id="w10" onchange="handleInputChanges()" value="0" name="w10">
+        </div>
+
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Velocidad angular inicial 2</div>
+          <input class="simulation-controls__input" type="number" id="w20" onchange="handleInputChanges()" value="0" name="w20">
+        </div>
+      </div>
+
+      <div class="simulation-controls__row">
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Masa 1</div>
+          <input class="simulation-controls__input" type="number" id="mass1" onchange="handleInputChanges()" value="15" name="mass1">
+        </div>
+
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Masa 2</div>
+          <input class="simulation-controls__input" type="number" id="mass2" onchange="handleInputChanges()" value="10" name="mass2">
+        </div>
+      </div>
+
+      <div class="simulation-controls__row">
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Largo 1</div>
+          <input class="simulation-controls__input" type="number" id="length1" onchange="handleInputChanges()" value="100" name="length1">
+        </div>
+
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Largo 2</div>
+          <input class="simulation-controls__input" type="number" id="length2" onchange="handleInputChanges()" value="75" name="length2">
+        </div>
+      </div>
+
+      <div class="simulation-controls__row-full">
+        <div class="simulation-controls__input-label">Gravedad</div>
+        <input class="simulation-controls__input" type="number" id="gravity" onchange="handleInputChanges()" value="9" name="gravity">
+      </div>
+
+      <div class="simulation-controls__row">
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Intervalo</div>
+          <input class="simulation-controls__input" type="number" id="h" onchange="handleInputChanges()" value="0.05" name="h">
+        </div>
+
+        <div class="simulation-controls__row-half">
+          <div class="simulation-controls__input-label">Iteraciones</div>
+          <input class="simulation-controls__input" type="number" id="n" onchange="handleInputChanges()" value="100000" name="n">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -32,8 +101,8 @@
 
     <div class="footer__team-member">
       <div class="footer__team-member">Steven Rubio</div>
-      <div class="footer__team-member">Jacky Hidalgo</div>
-      <div class="footer__team-member">Sophie</div>
+      <div class="footer__team-member">Jackeline Hidalgo</div>
+      <div class="footer__team-member">Sophie Cardona</div>
       <div class="footer__team-member">Christian Morales</div>
       <div class="footer__team-member">Bryan Chan</div>  
     </div>
